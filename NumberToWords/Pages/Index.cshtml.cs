@@ -62,6 +62,7 @@ namespace NumberToWords.Pages
                     throw e;
                 }
             }
+            this.MaxValue = _translator.GetMaxValue().ToString();
             return Page();
         }
     }
