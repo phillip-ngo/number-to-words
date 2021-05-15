@@ -1,0 +1,19 @@
+﻿@page
+@inject IStringLocalizer<IndexModel> localizer
+@model IndexModel
+@{
+    ViewData["Title"] = @localizer["Home page"];
+}
+
+<div class="text-center">
+    <div>
+        <form method="post">
+            <label>@localizer["Input:"]</label>
+            <input id="numberEdt" type="number" min="0" max="@Model.MaxValue" step="0.01" pattern="^\d*(\.\d{0,2}?)?$" required asp-for="@Model.Number" />
+            <input id="convertBtn" type="submit" value="@localizer["Convert"]">
+        </form>
+    </div>
+    <div>
+        <span id="wordsTxt">@Model.Words</span>
+    </div>
+</div>
